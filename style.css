@@ -25,6 +25,35 @@ body {
   padding: 0 80px;
 }
 
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 80px;
+}
+
+.carrinho_menu::after {
+  content: "";
+  display: inline-block;
+  background: url("./assets/carrinho.svg") no-repeat center center;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.carrinho_menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 /* LISTA PRODUTO */
 
 .produtos {
@@ -113,6 +142,10 @@ body {
   cursor: pointer;
 }
 
+.modal_fechar:active {
+  background: #808080;
+}
+
 .modal_img {
   grid-column: 1;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -141,6 +174,11 @@ body {
   font-size: 1rem;
   padding: 10px 25px;
   font-family: "Noto Serif";
+}
+
+.modal_btn.esgotado {
+  background: #808080;
+  cursor: default;
 }
 
 .modal_btn:active {
