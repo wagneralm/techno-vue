@@ -65,6 +65,10 @@ const vm = new Vue({
       if(window.localStorage.carrinho) {
         this.carrinho = JSON.parse(window.localStorage.carrinho);
       }
+    }, 
+    compararEstoque() {
+        const items = this.carrinho.filter(({id}) => id === this.produto.id);
+        this.produto.estoque -= items.length;
     },
     alerta(mensagem) {
       this.mensagemAlerta = mensagem;
@@ -85,6 +89,7 @@ const vm = new Vue({
       document.title = this.produto.nome || "Techno";
       const hash = this.produto.id || "";
       history.pushState(null, null, `#${hash}`);
+      this.compararEstoque();
     },
     carrinho() {
       window.localStorage.carrinho = JSON.stringify(this.carrinho);
